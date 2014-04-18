@@ -11,8 +11,12 @@ app.use(bodyParser());
 // set our port
 var port = process.env.PORT || 8080; 
 
+
+// DB SETUP
 // connect to a local database
 mongoose.connect('mongodb://localhost:27017/build-a-restful-api-using-node-and-express-4');
+
+var Bear = require('./app/models/bear');
 
 
 // ROUTES FOR OUR API
