@@ -1,13 +1,18 @@
 var 
   express = require('express'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  mongoose = require('mongoose');
 
 var app = express();
 
 // configure to use body parser so we can get the data from a post
 app.use(bodyParser());
 
-var port = process.env.PORT || 8080; // set our port
+// set our port
+var port = process.env.PORT || 8080; 
+
+// connect to a local database
+mongoose.connect('mongodb://localhost:27017/build-a-restful-api-using-node-and-express-4');
 
 
 // ROUTES FOR OUR API
